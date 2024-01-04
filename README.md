@@ -66,3 +66,7 @@ Check out [our documentation](https://docs.astro.build) or jump into our [Discor
 ## Credit
 
 This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+
+## Memo
+- [GitHub ActionsでNetlifyにデプロイする](https://zenn.dev/wintyo/articles/9861799eb845e3)
+- Netlify : https://teal-scone-213c4e.netlify.app/
