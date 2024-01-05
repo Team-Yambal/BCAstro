@@ -1,7 +1,7 @@
 export const ReactComponent = () => {
   return (
     <div>
-      Hello
+      React Component
     </div>
   )
 }
