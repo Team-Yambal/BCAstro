@@ -1,11 +1,16 @@
-import { MapContainer, TileLayer, useMap, Marker, Popup, type MapContainerProps } from 'react-leaflet'
+import { MapContainer, TileLayer, type MapContainerProps } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
+import L from "leaflet";
+import icon from "leaflet/dist/images/marker-icon.png";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
-/*
-import { useStore } from '@nanostores/react';
+//defaultMarker
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconUrl: icon,
+  shadowUrl: iconShadow,
+});
 
-import { pointsStore } from '../store/points'
-*/
 export type MapProps = MapContainerProps & {
   children: React.ReactNode
 }
