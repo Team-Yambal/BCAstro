@@ -3,7 +3,7 @@ import Container from '../../components/Container.astro';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content'
 import { MapWrapper } from '../../feature/MapWrapper';
-import { type Point } from '../../feature/pointStore';
+import { type Point } from '../../store/pointsStore';
 
 const pointsData = (await getCollection('map'))
 
