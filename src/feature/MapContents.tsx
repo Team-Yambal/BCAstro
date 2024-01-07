@@ -1,7 +1,7 @@
 import { Marker, Popup, useMap, useMapEvents } from "react-leaflet"
 import { type LatLng } from "leaflet"
 import { useStore } from '@nanostores/react'
-import { pointsStore } from './pointsStore'
+import { pointsStore } from '../store/pointsStore'
 import React, { useCallback } from 'react'
 
 
@@ -16,7 +16,7 @@ export const MapContents = () => {
   const clickHandler = useCallback((latlng:LatLng) => {
     console.log('click', latlng)
     map.panTo(latlng)
-  })
+  },[])
 
   return (
     <>
