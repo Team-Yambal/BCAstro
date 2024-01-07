@@ -2,6 +2,7 @@
 import Container from '../components/Container.astro';
 import { ReactComponent } from '../components/ReactComponent';
 import Layout from '../layouts/Layout.astro';
+import { Map } from '../components/Map'
 ---
 
 <Layout>
@@ -10,5 +11,7 @@ import Layout from '../layouts/Layout.astro';
 			Tailwind CSS
 		</div>
 		<ReactComponent client:only />
+		<Map client:only="react" center={[35, 135]} zoom={15} style={{height: '500px'}} scrollWheelZoom/>
 	</Container>
 </Layout>
+../feature/Map../components/feature/Map../components/Map
