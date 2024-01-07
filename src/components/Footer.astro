@@ -1,18 +1,15 @@
 ---
 import Container from "./Container.astro";
 const today = new Date();
+
+const { class:classProp, ...props } = Astro.props;
+const className:string[] = classProp ? [classProp] : []
 ---
 
-<footer>
+<footer class:list={className}>
 	<Container>
-		&copy; {today.getFullYear()} Your name here. All rights reserved.
+		<div class="text-center">
+			&copy; {today.getFullYear()} Your name here. All rights reserved.
+		</div>
 	</Container>
 </footer>
-<style>
-	footer {
-		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
-	}
-</style>

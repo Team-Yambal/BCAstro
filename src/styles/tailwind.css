@@ -2,3 +2,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply h-full;
+  }
+  body {
+    @apply text-base text-black font-sans h-full;
+    font-variation-settings: 'wght' 400;
+  }
+}

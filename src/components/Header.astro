@@ -2,11 +2,14 @@
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 import Container from './Container.astro';
+
+const { class:classProp, ...props } = Astro.props;
+const className:string[] = classProp ? [classProp] : []
 ---
 
-<header>
+<header class:list={className}>
 	<Container>
-		<nav>
+		<nav class="flex items-center justify-between">
 			<h2><a href="/">{SITE_TITLE}</a></h2>
 			<div class="internal-links">
 				<HeaderLink href="/">Home</HeaderLink>
@@ -17,40 +20,24 @@ import Container from './Container.astro';
 	</Container>
 </header>
 <style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
 	h2 a,
 	h2 a.active {
 		text-decoration: none;
 	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
 	nav a {
 		padding: 1em 0.5em;
-		color: var(--black);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
 	}
 	nav a.active {
+		@apply border-b-indigo-500;
 		text-decoration: none;
-		border-bottom-color: var(--accent);
 	}
 
 	a {
 		transition: font-variation-settings .25s;
 	}
+
 	a:hover {
 		font-variation-settings: 'wght' 700;
 	}

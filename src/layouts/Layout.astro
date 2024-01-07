@@ -20,25 +20,14 @@ const description = dscProps ? dscProps : SITE_DESCRIPTION
 	<head>
 		<BaseHead title={title} description={description} />
 	</head>
-	<body>
-		<Header title={title} />
-		<main id="body">
+	<body class="flex flex-col">
+		<Header
+      title={title}
+      class="grow-0 shrink-0 m-0 py-0 px-4 drop-shadow-md bg-white"
+    />
+		<main class="grow">
 			<slot />
 		</main>
-		<Footer />
+		<Footer class="grow-0 shrink-0 bg-gray-300 p-4"/>
 	</body>
 </html>
-
-<style>
-	body {
-    display: flex;
-    flex-direction: column;
-    & > :global(header), & > :global(footer){
-      flex-grow: 0;
-      flex-shrink: 0;
-    }
-    & > :global(#body) {
-      flex-grow: 1;
-    }
-  }
-</style>
