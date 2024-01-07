@@ -2,7 +2,7 @@ import { Map, type MapProps } from '../components/Map'
 import { MapContents } from './MapContents'
 import { pointsStore, type Point } from '../store/pointsStore'
 
-export type MapWrapperProps = MapProps & {
+export type MapWrapperProps = Omit<MapProps, 'children'> & {
   points: Point[]
 }
 
