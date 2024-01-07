@@ -1,14 +1,13 @@
 import { MapContainer, TileLayer, type MapContainerProps } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from "leaflet";
-import icon from "leaflet/dist/images/marker-icon.png";
-import iconShadow from "leaflet/dist/images/marker-shadow.png";
+
 
 //defaultMarker
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconUrl: icon,
-  shadowUrl: iconShadow,
+  iconUrl: "/marker-icon.png",
+  shadowUrl: "/marker-shadow.png",
 });
 
 export type MapProps = MapContainerProps & {
