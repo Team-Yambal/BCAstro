@@ -13,4 +13,16 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog };
+const map = defineCollection({
+	type: 'content',
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		pubDate: z.coerce.date(),
+		updatedDate: z.coerce.date().optional(),
+		latitude: z.number(),
+		longitude: z.number()	
+	}),
+});
+
+export const collections = { blog, map };

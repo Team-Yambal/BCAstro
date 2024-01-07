@@ -1,0 +1,34 @@
+---
+import Container from '../../components/Container.astro';
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content'
+import { MapWrapper } from '../../feature/MapWrapper';
+import { type Point } from '../../store/pointsStore';
+
+const pointsData = (await getCollection('map'))
+
+
+const points = pointsData.map((data) => {
+	const point:Point = {
+		lat: data.data.latitude,
+  	lng: data.data.longitude,
+		label: data.data.title
+	}
+	return point
+})
+
+
+---
+
+<Layout>
+	<Container>
+		<MapWrapper
+			client:only="react"
+			points={points}
+			center={[35.00742814711113, 135.76876401901248]}
+			zoom={19}
+			style={{height: '500px'}}
+			scrollWheelZoom
+		/>
+	</Container>
+</Layout>
