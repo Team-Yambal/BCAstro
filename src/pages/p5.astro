@@ -1,0 +1,11 @@
+---
+import Container from '../components/Container.astro';
+import Layout from '../layouts/Layout.astro';
+import { P5 } from '../components/P5'
+---
+
+<Layout>
+	<Container>
+    <P5 client:only="react" style={{width: '100%', height: '500px'}}/>
+	</Container>
+</Layout>
