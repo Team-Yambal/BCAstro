@@ -1,22 +1,22 @@
 ---
+import { getCollection } from 'astro:content'
 import Container from '../../components/Container.astro';
 import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content'
-import { MapWrapper } from '../../feature/MapWrapper';
-import { type Point } from '../../store/pointsStore';
+import { MapWrapper } from '../../feature/map/MapWrapper';
+import { type Point } from '../../feature/map/pointsStore';
 
 const pointsData = (await getCollection('map'))
-
+console.log(pointsData)
 
 const points = pointsData.map((data) => {
 	const point:Point = {
 		lat: data.data.latitude,
   	lng: data.data.longitude,
-		label: data.data.title
+		label: data.data.title,
+		slug: data.slug
 	}
 	return point
 })
-
 
 ---
 
